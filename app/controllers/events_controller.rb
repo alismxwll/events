@@ -30,16 +30,11 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
-    if @event.save
-      redirect_to event_path(@event)
-    else
-      render 'edit'
-    end
   end
     
   def update
     @event = Event.find(params[:id])
-    if @event.update
+    if @event.update(event_params)
       redirect_to event_path(@event)
     else  
       render 'edit'
@@ -48,6 +43,6 @@ class EventsController < ApplicationController
   
   private
   def event_params
-    params.require(:event).permit(:name, :time, :place)
+    params.require(:event).permit(:name, :time, :date, :place)
   end
 end

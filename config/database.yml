@@ -6,12 +6,12 @@ default: &default
 
 development:
   <<: *default
-  database: 
+  database: event_development
 
 test:
   <<: *default
-  database: 
+  database: event_test
 
 production:
   <<: *default
-  database: 
+  database: event_production
