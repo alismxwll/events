@@ -1,0 +1,8 @@
+<% if @event.errors.any? %>
+<h4>We Have a Problem...</h4>
+  <ul>
+    <% @event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
