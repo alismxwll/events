@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  
+  <div class="row">
+    <div class="nav-bar right">
+      <ul class="button-group">
+        <li><%= link_to "Home", root_path %>/</li>
+        <li><%= link_to "New", new_event_path %></li>
+      </ul>
+    </div>
+  
+  <%= yield %>
+</div>
 </body>
 </html>
